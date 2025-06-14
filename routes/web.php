@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\NotaController;
+use App\Models\Asignatura;
 use App\Models\Nota;
 use Illuminate\Support\Facades\Route;
 
@@ -25,5 +26,13 @@ Route::get('notas/ver/{id}',function($id){
 Route::get('notas/cambiar/{id}', function($id){
     return view('notas.cambiar', ['nota'=>Nota::where('id', $id)->first()]);
 })->name('notas.cambiar');
+
+Route::get('asignaturas/aprobados/{id}', function($id){
+    return view('notas.aprobados', ['aprobados'=>Asignatura::with('notas.alumno')->where('id', $id)->get()]);
+})->name('aprobados');
+
+Route::get('asignaturas', function(){
+    return view('notas.asignaturas',['asignaturas'=>Asignatura::all()]);
+})->name('asignaturas');
 
 require __DIR__ . '/auth.php';

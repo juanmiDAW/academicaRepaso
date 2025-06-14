@@ -34,6 +34,12 @@ new class extends Component
                         {{ __('Alumnos') }}
                     </x-nav-link>
                 </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('asignaturas')" :active="request()->routeIs('asignaturas')" wire:navigate>
+                        {{ __('Elegir asignaturas') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->

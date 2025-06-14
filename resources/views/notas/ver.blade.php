@@ -19,7 +19,7 @@
                                         <th scope="col" class="px-6 py-3">Evaluacion</th>
                                         <th scope="col" class="px-6 py-3">Asignatura</th>
                                         <th scope="col" class="px-6 py-3">Nota</th>
-                                        <th scope="col" class="px-6 py-3"></th>
+                                        <th scope="col" class="px-6 py-3">Nota</th>
 
                                     </thead>
                                 </tr>
