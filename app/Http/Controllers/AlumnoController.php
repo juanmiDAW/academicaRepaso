@@ -13,7 +13,7 @@ class AlumnoController extends Controller
      */
     public function index()
     {
-        //
+        return view('alumnos.index',['alumnos'=>Alumno::paginate(10)]);
     }
 
     /**
@@ -21,7 +21,7 @@ class AlumnoController extends Controller
      */
     public function create()
     {
-        //
+        return view('alumnos.create');
     }
 
     /**
@@ -29,7 +29,10 @@ class AlumnoController extends Controller
      */
     public function store(StoreAlumnoRequest $request)
     {
-        //
+        $validate = $request->validated();
+        Alumno::create($validate);
+
+        return redirect()->route('alumnos.index');
     }
 
     /**

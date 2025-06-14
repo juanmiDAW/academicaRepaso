@@ -9,4 +9,12 @@ class Evaluacion extends Model
 {
     /** @use HasFactory<\Database\Factories\EvaluacionFactory> */
     use HasFactory;
+
+    protected $fillable = ['evaluacion'];
+
+    protected $table = 'evaluaciones';
+
+    public function notas(){
+        return $this->hasMany(Nota::class);
+    }
 }

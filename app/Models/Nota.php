@@ -9,4 +9,18 @@ class Nota extends Model
 {
     /** @use HasFactory<\Database\Factories\NotaFactory> */
     use HasFactory;
+
+    protected $fillable =['alumno_id', 'asignatura_id','evaluacion_id', 'nota'];
+
+    public function alumno(){
+        return $this->belongsTo(Alumno::class);
+    }
+
+    public function asignatura(){
+        return $this->belongsTo(Asignatura::class);
+    }
+
+    public function evaluacion(){
+        return $this->belongsTo(Evaluacion::class);
+    }
 }
