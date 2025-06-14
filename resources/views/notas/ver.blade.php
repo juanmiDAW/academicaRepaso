@@ -19,6 +19,7 @@
 
                                                 <th scope="col" class="px-6 py-3">Alumno</th>
                                                 <th scope="col" class="px-6 py-3">Evaluacion</th>
+                                                <th scope="col" class="px-6 py-3">Asignatura</th>
                                                 <th scope="col" class="px-6 py-3">Nota</th>
                                         </thead>
                                         </tr>
@@ -31,6 +32,9 @@
                                                 </td>
                                                 <td class="px-6 py-4">
                                                     {{ $nota->evaluacion->evaluacion }}
+                                                </td>
+                                                <td class="px-6 py-4">
+                                                    {{ $nota->asignatura->denominacion }}
                                                 </td>
                                                 <td class="px-6 py-4">
                                                     {{ $nota->nota }}
