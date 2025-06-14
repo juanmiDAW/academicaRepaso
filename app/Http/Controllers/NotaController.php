@@ -29,7 +29,7 @@ class NotaController extends Controller
      */
     public function store(StoreNotaRequest $request)
     {
-        //
+        
     }
 
     /**
@@ -53,7 +53,10 @@ class NotaController extends Controller
      */
     public function update(UpdateNotaRequest $request, Nota $nota)
     {
-        //
+        $validate = $request->validated();
+        $nota->fill($validate);
+        $nota->save();
+        return redirect()->route('notas', ['id'=> $nota->alumno_id]);
     }
 
     /**

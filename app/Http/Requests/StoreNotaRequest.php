@@ -11,7 +11,7 @@ class StoreNotaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,7 @@ class StoreNotaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nota'=>'required|deicimal:3,2',
         ];
     }
 }
