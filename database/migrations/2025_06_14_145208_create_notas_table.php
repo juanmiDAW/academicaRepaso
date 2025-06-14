@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('alumno_id')->constrained();
             $table->foreignId('asignatura_id')->constrained();
             $table->foreignId('evaluacion_id')->constrained('evaluaciones');
-            $table->decimal('nota',1,2);
+            $table->decimal('nota',3,2);
             $table->timestamps();
         });
     }
